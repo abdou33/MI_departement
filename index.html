@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .upper-header{
+            display: flex;
+            margin: 0 auto 0 20%;
+        }
+        .upper-header img{
+            width: 11vw;
+            float: left;
+        }
+        .inside-header{
+            margin: auto 1% auto 8%;
+            text-align: center;
+        }
+        .inside-header h3 p{
+            padding: 10vw;
+        }
+        #upper-header-h3{
+            font-size: 2.5vw;
+        }
+        #upper-header-p{
+            font-size: 2vw;
+        }
+        #nav-bar ul {
+            list-style-type: none;
+            overflow: hidden;
+            background-color: #333333;
+            display:flex;
+            justify-content: center;
+        }
+        #icon{
+            width: 1000px;
+            display: none;
+        }
+        #icon1{
+            color: black;
+            padding: 14px 16px;
+            margin: 10%;
+            text-decoration: none;
+            font-size: 30px;
+        }
+        @media only screen and (max-width: 600px) {
+            /*change this to 1000 later*/
+            #nav-bar ul {
+            list-style-type: none;
+            overflow: hidden;
+            background-color: #333333;
+            display:none;
+            justify-content: center;
+            }
+            #icon{
+            width: 1000px;
+            display: block;
+        }
+        }
+        li {
+            padding: 5px 10px;
+            color:white;
+        }
+        #nav-bar ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            font-size: 1.68vw;
+            padding: 14px;
+            text-decoration: none;
+            transition: all 0.3s;
+            white-space: nowrap;
+
+        }
+        #nav-bar ul li a:hover{
+            background-color: rgb(95, 95, 95);
+        }
+        .dropdown-menu-sco {
+            /*display: none;*/
+            width: 50px;
+            text-align: center;
+        }
+        .dropdown-menu-sco a{
+            text-align: center;
+        }
+
+        #scolar:hover .dropdown-menu-sco {
+            display: block;
+            /*position:absolute;*/
+            left: 0;
+            top: 100%;
+            background-color: #333333;
+            text-align: center;
+        }
+    </style>
+    <head>
+    </head>
+    <body>
+        <div class="upper-header">
+            <img src="/media/logo1.png">
+            <div class="inside-header">
+                <h3 id="upper-header-h3">Département d'Informatique</h3>
+                <p id="upper-header-p">
+                    University Center Of Illizi</p>
+            </div>
+        </div>
+        <a id="icon1">
+            <i class="fa fa-bars" id="icon"></i>
+        </a>
+
+        <div id="nav-bar">
+            <ul id="horizental-navigator">
+                <li><a href="#home">Home</a></li>
+                <li id="scolar">
+                    <a href="#news">scolarite <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-menu-sco">
+                          <a href="#">emplois</a>
+                          <a href="#">planning exams</a>
+                          <a href="#">affichage des notes</a>
+                          <a href="#">inscription</a>
+                      </div>
+                </li>
+                <li><a href="#contact">Post Graduation <i class="fas fa-caret-down"></i></a></li>
+                <li><a href="#about">club cientifique <i class="fas fa-caret-down"></i></a></li>
+                <li><a href="#about">courses online <i class="fas fa-caret-down"></i></a></li>
+                <li><a href="#about">staff <i class="fas fa-caret-down"></i></a></li>
+            </ul>
+        </div>
+    </body>
+
+</html>
