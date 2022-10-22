@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<style>
+    *{
+        margin: 0 ;
+        padding: 0;
+    }
+    p{
+        font-size: 2vw;
+        padding: 2%;
+        margin: auto;
+    }
+    form{
+        width: 70%;
+        margin: auto;
+    }
+    input, textarea{
+        width: 100%;
+        padding: 2%;
+        text-align: center;
+        font-size: 2vw;
+        height: 1ch;
+    }
+    .title ,.body{
+        display: flex;
+        width: 100%;
+        margin-top: 1%;
+    }
+    textarea{
+        resize: none;
+        height: 70vh;
+        text-align: center;
+        font-size: 2vw;
+    }
+    .button{
+        margin: auto;
+        width: 100%;
+        margin: auto;
+        font-size: 2.5vw;
+    }
+</style>
+<html>
+    <head><meta charset="UTF-8"></head>
+    <body>
+        <form action="file.php" method="post" accept-charset="utf-8">
+            <div class="title">
+                <p>title: </p>
+                <input type="text" class="first_input" type="text" name="title" id="title">
+            </div>
+            <div class="body">
+                <p>body: </p>
+                <textarea id="body" class="body" name="body"></textarea>
+            </div>
+            <button type="submit" class="button">submit</button>
+        </form>
+    </body>
+</html>

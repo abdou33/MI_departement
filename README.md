@@ -50,3 +50,6 @@ inscription-reinscription.html
 │   ├── media2.gif
 
 staff.html
+
+
+sudo chmod a+rwx MI_departement/news/

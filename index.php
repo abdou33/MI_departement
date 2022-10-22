@@ -4,7 +4,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
     <style>
         *{
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
             box-sizing:border-box
@@ -29,6 +28,17 @@
         }
         #upper-header-p{
             font-size: 2vw;
+        }
+        #icon{
+            width: 1000px;
+            display: none;
+        }
+        #icon1{
+            color: black;
+            padding: 14px 16px;
+            margin: 10%;
+            text-decoration: none;
+            font-size: 30px;
         }
         .menu-bar ul {
             list-style: none;
@@ -60,7 +70,6 @@
             justify-content: space-between;
             align-items: center;
             position: relative;
-            margin-bottom: 5%;
         }
 
         .menu-bar ul li {
@@ -76,7 +85,6 @@
             text-align: center;
             font-size: 1.68vw;
             padding: auto;
-            margin: 0;
             text-decoration: none;
             transition: all 0.3s;
             white-space: nowrap;
@@ -118,6 +126,80 @@
             padding: 10px;
             transition: all 0.3s;
         }
+
+        /*slideshow styles*/
+
+        .slideshow {
+            width: 85vw;
+            height: 30vw;
+            margin: 20px auto 20px auto;
+            overflow: hidden;
+            border: solid 1px black;
+            border-radius: 3px;
+        }
+
+        .item {
+            display: flex;
+            width: 100%;
+        }
+
+        .slideshow-container {
+            width: 100%;
+            transition: 1s ease;
+            display: flex;
+        }
+
+        .slideshow-container:hover {
+            animation-play-state: paused;
+        }
+
+        .slide {
+            animation: slide 20s ease infinite;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0%);
+            }
+            30% {
+                transform: translateX(0);
+            }
+            35% {
+                transform: translateX(-100%);
+            }
+            65% {
+                transform: translateX(-100%);
+            }
+            70% { 
+                transform: translateX(-200%);
+            }
+            95% { 
+                transform: translateX(-200%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .item img {
+            width: 61vw;
+        }
+
+        .item .caption {
+            width: 85vw;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            position: absolute;
+            bottom: 10vw;
+            font-size: 3vw;
+            background-color: rgb(51, 51, 51, 0.4);
+            padding: 1vw;
+            margin: auto;
+        }
+        .item .space{
+            width: 15vw;
+            height: 100%;
+        }
         footer{
             display: flex;
             width: 100%;
@@ -148,44 +230,17 @@
             color: #5389ff;
             text-decoration: none;
         }
-        .teachers{
-            width: 80%;
+        .news{
+            width: 70%;
             margin: auto;
         }
-        .teachers:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-        .prof{
-
-            text-align: center;
-            float: left;
-            width: 29.3%;
-            min-height: 31vw;
-            margin: 2%;
-            padding: 2%;
-        }
-        .prof img{
-            width: 15vw;
-            border-radius: 100%;
-            background-color: #5389ff;
-            margin: auto;
-        }
-        .names{
-            font-size: 2vw;
-        }
-        .description{
-            font-size: 1.7vw;
-        }
-
     </style>
     <head>
         <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">  -->
     </head>
     <body>
         <div class="upper-header">
-            <a href="../index.html"><img src="/media/logo1.png" ></a>
+            <a href="index.html"><img src="/media/logo1.png" ></a>
             <div class="inside-header">
                 <h3 id="upper-header-h3">Département d'Informatique</h3>
                 <p id="upper-header-p">
@@ -198,7 +253,7 @@
 
         <div class="menu-bar">
             <ul>
-                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li id="scolar">
                     <a href="#news">scolarite <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-menu">
@@ -233,42 +288,68 @@
                 </li>
             </ul>
         </div>
-        <div class="teachers">
-            <div class="prof">
-                <img src="/media/staff/messikh_chouaib.jpeg">
-                <h4 class="names">Dr C. Messikh</h4>
-                <p class="description">Director of the Department and lecturer professor</p>
+
+        <!--slider-->
+        <!--hovering over the images will pause the slideshow -->
+
+        <section class="slideshow">
+            <div class="slideshow-container slide">
+                <div class="item">
+                    <div class="space"></div>
+                    <img src="/media/slider/uni2.jpg" />
+                    <div class="caption">Computer Science Department</div>
+                    <div class="space"></div>
+                </div>
+                <div class="item">
+                    <div class="space"></div>
+                    <img src="/media/slider/ai.jpeg" />
+                    <div class="caption">AI Rules the World</div>
+                    <div class="space"></div>
+                </div>
+            
+                <div class="item">
+                    <div class="space"></div>
+                    <img src="/media/slider/uni.jpeg" />
+                    <div class="caption">computer sciencce students</div>
+                    <div class="space"></div>
+                </div>
             </div>
-            <div class="prof">
-                <img src="/media/staff/User.ico">
-                <h4 class="names">Dr R. Gasmi</h4>
-                <p class="description">lecturer professor</p>
-            </div>
-            <div class="prof">
-                <img src="/media/staff/User.ico">
-                <h4 class="names">Dr A. Soualmi</h4>
-                <p class="description">lecturer professor</p>
-            </div>
-            <div class="prof">
-                <img src="/media/staff/User.ico">
-                <h4 class="names">Dr R. Matmat</h4>
-                <p class="description">lecturer professor</p>
-            </div>
-            <div class="prof">
-                <img src="/media/staff/User.ico">
-                <h4 class="names">Dr A. Benmachiche</h4>
-                <p class="description">lecturer professor</p>
-            </div>
-            <div class="prof">
-                <img src="/media/staff/User.ico">
-                <h4 class="names">Dr Z. Laadjal</h4>
-                <p class="description">lecturer professor</p>
-            </div>
-            <!--<div class="prof">
-                <img src="/media/staff/User.ico">
-                <h4 class="names">name lastname</h4>
-                <p class="description">iysegfyuh uihfuijewf g efg</p>
-            </div>-->
+        </section>
+        <div class="news">
+        <?php
+        
+        $files = array();
+        $dir = "news/";
+
+        if ($handle = opendir($dir)) {
+            while (false !== ($file = readdir($handle))) {
+                if ($file == "." || $file == "..") {
+                    
+                }
+                else{
+                    if (filesize($dir.$file) != 0){
+                        $files[filemtime($dir.$file)] = $file;
+                    }
+                }
+            }
+            closedir($handle);
+
+
+            // sort
+            krsort($files);
+
+            //$lines = file($myFile);//file in to an array
+            //echo $lines[1]; //line 2
+
+            foreach ($files as $val) {
+                echo "<hr>";
+                echo "<h3 href>".str_replace(".html", "",$val)."</h3>";
+                echo "<p>".date('F d Y, H:i',filemtime($dir.$val))."</p>";
+                $lines = file($dir.$val);
+                echo "<p>".substr($lines[225], 0, 13)."</p>";
+            }
+        } 
+        ?>
         </div>
         <footer>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448.26412054664456!2d8.482289817749207!3d26.52120253170844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1230e01f8e27f707%3A0x3011d91200a9ba0b!2z2KzYp9mF2LnYqSDYpdmE2YrYstmK!5e0!3m2!1sar!2sdz!4v1666372582233!5m2!1sar!2sdz" 
@@ -287,7 +368,6 @@
                 <p>E-mail : <a href="mailto:mi@cuillizi.dz">mi@cuillizi.dz</a></p>
             </div>
         </footer>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARpQv11FoYgWwJakgjwoZVQ2QDEKVlVz8&callback=initMap&v=weekly"defer></script>
         <script>
         </script>
     </body>
