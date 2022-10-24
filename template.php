@@ -127,7 +127,7 @@
             padding: 1vw;
 
 
-            position: relative;
+            position: fixed;
             left:0px;
             bottom:0px;
             
@@ -164,14 +164,18 @@
           font-size: 1.6vw;
           text-align: center;
         }
+        .preview{
+            display: none;
+        }
 
     </style>
     <head>
+    <meta charset="utf-8">
         <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">  -->
     </head>
     <body>
         <div class="upper-header">
-            <a href="../index.html"><img src="/media/logo1.png" ></a>
+            <a href="../index.html"><img src="media/logo1.png" ></a>
             <div class="inside-header">
                 <h3 id="upper-header-h3">Département d'Informatique</h3>
                 <p id="upper-header-p">
@@ -220,9 +224,9 @@
             </ul>
         </div>
         <!--extra news-->
-
         <div class="news">
           <h3>{TITLE}</h3>
+          <p class="preview">{PREVIEW}</p>
           <p>{BODY}</p>
         </div>
 

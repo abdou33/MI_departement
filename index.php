@@ -232,15 +232,23 @@
         }
         .news{
             width: 70%;
-            margin: auto;
+            margin: 4% auto 4% auto;
+            text-align: left;
+        }
+        .part{
+            padding: 1%;
+        }
+        .readmore{
+            padding: 1%;
         }
     </style>
     <head>
+        <meta charset="utf-8">
         <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">  -->
     </head>
     <body>
         <div class="upper-header">
-            <a href="index.html"><img src="/media/logo1.png" ></a>
+            <a href="index.html"><img src="media/logo1.png" ></a>
             <div class="inside-header">
                 <h3 id="upper-header-h3">Département d'Informatique</h3>
                 <p id="upper-header-p">
@@ -296,20 +304,20 @@
             <div class="slideshow-container slide">
                 <div class="item">
                     <div class="space"></div>
-                    <img src="/media/slider/uni2.jpg" />
+                    <img src="media/slider/uni2.jpg" />
                     <div class="caption">Computer Science Department</div>
                     <div class="space"></div>
                 </div>
                 <div class="item">
                     <div class="space"></div>
-                    <img src="/media/slider/ai.jpeg" />
+                    <img src="media/slider/ai.jpeg" />
                     <div class="caption">AI Rules the World</div>
                     <div class="space"></div>
                 </div>
             
                 <div class="item">
                     <div class="space"></div>
-                    <img src="/media/slider/uni.jpeg" />
+                    <img src="media/slider/uni.jpeg" />
                     <div class="caption">computer sciencce students</div>
                     <div class="space"></div>
                 </div>
@@ -334,6 +342,13 @@
             }
             closedir($handle);
 
+            if (count($files) == 0){
+                echo "<p>no news</p>";
+            }
+            else {
+                echo "<hr>";
+            }
+
 
             // sort
             krsort($files);
@@ -342,11 +357,16 @@
             //echo $lines[1]; //line 2
 
             foreach ($files as $val) {
-                echo "<hr>";
-                echo "<h3 href>".str_replace(".html", "",$val)."</h3>";
+                
+                echo '<div class="part">';
+                echo "<a href".$dir.$val."><h3>".str_replace(".html", "",$val)."</h3></a>";
                 echo "<p>".date('F d Y, H:i',filemtime($dir.$val))."</p>";
                 $lines = file($dir.$val);
-                echo "<p>".substr($lines[225], 0, 13)."</p>";
+                echo $lines[228];
+                echo '<a class="readmore" href='.$dir.rawurlencode($val).'><br><br>Read more <i class="fas fa-caret-right"></i></a>';
+                //substr($lines[217], 10, 30)
+                echo "</div>";
+                echo "<hr>";
             }
         } 
         ?>
