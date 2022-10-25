@@ -127,7 +127,7 @@
             padding: 1vw;
 
 
-            position: relative;
+            position: fixed;
             left:0px;
             bottom:0px;
             
@@ -151,21 +151,24 @@
             text-decoration: none;
         }
 
-        .news{
+        .emplois{
             width: 70%;
             margin: 4% auto 4% auto;
         }
-        .news h3{
-          font-size: 2.2vw;
-          text-align: center;
-          padding: 5%;
+        .emplois p{
+            padding: 7% 0 7% 0;
         }
-        .news p{
-          font-size: 1.6vw;
-          text-align: center;
+        .emplois h2 {
+            padding: 2%;
         }
-        .preview{
-            display: none;
+        select{
+            width: 50%;
+            height: 27px;
+            outline: none;
+        }
+        .emplois input{
+            height: 27px;
+            width: 50px;
         }
 
     </style>
@@ -175,7 +178,7 @@
     </head>
     <body>
         <div class="upper-header">
-            <a href="../index.html"><img src="../media/logo1.png" ></a>
+            <a href="../index.html"><img src="../../media/logo1.png" ></a>
             <div class="inside-header">
                 <h3 id="upper-header-h3">Département d'Informatique</h3>
                 <p id="upper-header-p">
@@ -224,12 +227,38 @@
             </ul>
         </div>
         <!--extra news-->
-        <div class="news">
-          <h3>{TITLE}</h3>
-          <p class="preview">{PREVIEW}</p>
-          <p>{BODY}</p>
-        </div>
+        <div class="emplois">
+        <form  action="" METHOD="POST">
+            <h2>Emplois du Temps</h2>
+            <select name="grade" id="grade">
+                <option value="0">-any-</option>
 
+                <option value="0"></option>
+                <option value="0">--license--</option>
+                <option value="LI1">--First year license--</option>
+                <option value="LI2">--Second year license--</option>
+                <option value="LI3">--Third year license--</option>
+
+                <option value="0"></option>
+                <option value="0">--Master--</option>
+                <option value="MI1">--First year Master--</option>
+                <option value="MI2">--Second year Master--</option>
+
+            </select>
+            <input type="submit" value="Apply">
+    </form>
+
+    <?php
+        if(isset($_POST['grade'])){
+            $select1 = $_POST['grade'];
+
+            if($select1 != 0){
+                echo "<p>".$select1."</p>";
+                //later add that automatically downloads the right file depends on the value
+            }
+        }
+    ?>
+    </div>
         <footer>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448.26412054664456!2d8.482289817749207!3d26.52120253170844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1230e01f8e27f707%3A0x3011d91200a9ba0b!2z2KzYp9mF2LnYqSDYpdmE2YrYstmK!5e0!3m2!1sar!2sdz!4v1666372582233!5m2!1sar!2sdz" 
             width="300px" 

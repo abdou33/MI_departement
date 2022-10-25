@@ -242,6 +242,8 @@
             padding: 1%;
         }
     </style>
+    <link rel="icon" href="media/logo-darkinwhite.png">
+    <title>MI_dep</title>
     <head>
         <meta charset="utf-8">
         <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">  -->
