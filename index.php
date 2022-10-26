@@ -149,10 +149,6 @@
             display: flex;
         }
 
-        .slideshow-container:hover {
-            animation-play-state: paused;
-        }
-
         .slide {
             animation: slide 20s ease infinite;
         }
@@ -206,25 +202,22 @@
             background-color: #333333;
             color: white;
             text-align: left;
-            padding: 1vw;
+            padding: 2vw;
 
             position: relative;
             left:0px;
             bottom:0px;
         }
         footer iframe{
-            padding: 3%;
+            padding: 1%;
             margin: auto;
         }
         footer .contacts{
             margin: auto;
+            padding: 2%;
         }
         footer h3{
-            font-size: 1.7vw;
             padding: 1% 0 2% 0;
-        }
-        footer p{
-            font-size: 1.2vw;
         }
         footer a {
             color: #5389ff;
@@ -241,6 +234,14 @@
         .readmore{
             padding: 1%;
         }
+
+        .socials {
+            display: inline;
+        }
+        .socials img{
+            width: 3vw;
+            padding: 2px;
+        }
     </style>
     <link rel="icon" href="media/logo-darkinwhite.png">
     <title>MI_dep</title>
@@ -250,7 +251,7 @@
     </head>
     <body>
         <div class="upper-header">
-            <a href="index.html"><img src="media/logo1.png" ></a>
+            <a href=""><img src="media/logo1.png" ></a>
             <div class="inside-header">
                 <h3 id="upper-header-h3">Département d'Informatique</h3>
                 <p id="upper-header-p">
@@ -263,15 +264,15 @@
 
         <div class="menu-bar">
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="">Home</a></li>
                 <li id="scolar">
                     <a href="#news">scolarite <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-menu">
                         <ul>
-                            <li><a href="#">emplois</a></li>
-                            <li><a href="#">planning exams</a></li>
-                            <li><a href="#">affichage des notes</a></li>
-                            <li><a href="#">inscription</a></li>
+                            <li><a href="scolarite/emplois-du-temps">emplois</a></li>
+                            <li><a href="scolarite/emploi-des-exams">planning exams</a></li>
+                            <li><a href="scolarite/affichages-des-notes">affichage des notes</a></li>
+                            <li><a href="scolarite/inscription.html">inscription</a></li>
                         </ul>
                     </div>
               </li>
@@ -291,8 +292,8 @@
                     <a href="#about">staff <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-menu">
                         <ul>
-                            <li><a href="/staff/teachers.html">teachers</a></li>
-                            <li><a href="/staff/administration.html">administration</a></li>
+                            <li><a href="staff/teachers.html">teachers</a></li>
+                            <li><a href="staff/administration.html">administration</a></li>
                         </ul>
                     </div>
                 </li>
@@ -388,6 +389,14 @@
                 <p>Tél : +213 29 41 80 05</p>
                 <p>Fax : +213 29 41 80 05</p>
                 <p>E-mail : <a href="mailto:mi@cuillizi.dz">mi@cuillizi.dz</a></p>
+
+                <div class="socials">
+                    <a href="#"><img src="media/socials/fb.png"></a>
+                    <a href="#"><img src="media/socials/twiter.png"></a>
+                    <a href="#"><img src="media/socials/google+.jpg"></a>
+                    <a href="#"><img src="media/socials/linkdin.png"></a>
+                    <a href="#"><img src="media/socials/yt.png"></a>
+                </div>
             </div>
         </footer>
         <script>
