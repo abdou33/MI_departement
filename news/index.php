@@ -127,75 +127,6 @@
             transition: all 0.3s;
         }
 
-        /*slideshow styles*/
-
-        .slideshow {
-            width: 85vw;
-            height: 30vw;
-            margin: 20px auto 20px auto;
-            overflow: hidden;
-            border: solid 1px black;
-            border-radius: 3px;
-        }
-
-        .item {
-            display: flex;
-            width: 100%;
-        }
-
-        .slideshow-container {
-            width: 100%;
-            transition: 1s ease;
-            display: flex;
-        }
-
-        .slide {
-            animation: slide 20s ease infinite;
-        }
-
-        @keyframes slide {
-            0% {
-                transform: translateX(0%);
-            }
-            30% {
-                transform: translateX(0);
-            }
-            35% {
-                transform: translateX(-100%);
-            }
-            65% {
-                transform: translateX(-100%);
-            }
-            70% { 
-                transform: translateX(-200%);
-            }
-            95% { 
-                transform: translateX(-200%);
-            }
-            100% {
-                transform: translateX(0);
-            }
-        }
-
-        .item img {
-            width: 61vw;
-        }
-
-        .item .caption {
-            width: 85vw;
-            color: rgb(255, 255, 255);
-            text-align: center;
-            position: absolute;
-            bottom: 10vw;
-            font-size: 3vw;
-            background-color: rgb(51, 51, 51, 0.4);
-            padding: 1vw;
-            margin: auto;
-        }
-        .item .space{
-            width: 15vw;
-            height: 100%;
-        }
         footer{
             display: flex;
             width: 100%;
@@ -253,7 +184,7 @@
             padding: 2px;
         }
     </style>
-    <link rel="icon" href="media/logo-darkinwhite.png">
+    <link rel="icon" href="../media/logo-darkinwhite.png">
     <title>MI_dep</title>
     <head>
         <meta charset="utf-8">
@@ -261,7 +192,7 @@
     </head>
     <body>
         <div class="upper-header">
-            <a href=""><img src="media/logo1.png" ></a>
+            <a href="../"><img src="../media/logo1.png" ></a>
             <div class="inside-header">
                 <h3 id="upper-header-h3">Département d'Informatique</h3>
                 <p id="upper-header-p">
@@ -274,20 +205,20 @@
 
         <div class="menu-bar">
             <ul>
-                <li><a href="">Home</a></li>
+                <li><a href="../">Home</a></li>
                 <li id="scolar">
-                    <a href="#news">scolarite <i class="fas fa-caret-down"></i></a>
+                    <a href="">scolarite <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-menu">
                         <ul>
-                            <li><a href="scolarite/emplois-du-temps">emplois</a></li>
-                            <li><a href="scolarite/emploi-des-exams">planning exams</a></li>
-                            <li><a href="scolarite/affichages-des-notes">affichage des notes</a></li>
-                            <li><a href="scolarite/inscription.html">inscription</a></li>
+                            <li><a href="../scolarite/emplois-du-temps">emplois</a></li>
+                            <li><a href="../scolarite/emploi-des-exams">planning exams</a></li>
+                            <li><a href="../scolarite/affichages-des-notes">affichage des notes</a></li>
+                            <li><a href="../scolarite/inscription.html">inscription</a></li>
                         </ul>
                     </div>
               </li>
                 <li>
-                    <a href="#contact">Post Graduation <i class="fas fa-caret-down"></i></a>
+                    <a href="">Post Graduation <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-menu">
                         <ul>
                             <li><a href="#">presentation</a></li>
@@ -296,51 +227,25 @@
                         </ul>
                     </div>
                 </li>
-                <li><a href="#about">club cientifique</li>
+                <li><a href="">club cientifique</li>
                 <li><a href="http://elearning.cuillizi.dz/">online courses</a></li>
                 <li>
-                    <a href="#about">staff <i class="fas fa-caret-down"></i></a>
+                    <a href="">staff <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-menu">
                         <ul>
-                            <li><a href="staff/teachers.html">teachers</a></li>
-                            <li><a href="staff/administration.html">administration</a></li>
+                            <li><a href="../staff/teachers.html">teachers</a></li>
+                            <li><a href="../staff/administration.html">administration</a></li>
                         </ul>
                     </div>
                 </li>
             </ul>
         </div>
 
-        <!--slider-->
-        <!--hovering over the images will pause the slideshow -->
-
-        <section class="slideshow">
-            <div class="slideshow-container slide">
-                <div class="item">
-                    <div class="space"></div>
-                    <img src="media/slider/uni2.jpg" />
-                    <div class="caption">Computer Science Department</div>
-                    <div class="space"></div>
-                </div>
-                <div class="item">
-                    <div class="space"></div>
-                    <img src="media/slider/ai.jpeg" />
-                    <div class="caption">AI Rules the World</div>
-                    <div class="space"></div>
-                </div>
-            
-                <div class="item">
-                    <div class="space"></div>
-                    <img src="media/slider/uni.jpeg" />
-                    <div class="caption">computer sciencce students</div>
-                    <div class="space"></div>
-                </div>
-            </div>
-        </section>
         <div class="news" id="news">
         <?php
         
         $files = array();
-        $dir = "news/";
+        $dir = "./";
 
         if ($handle = opendir($dir)) {
             while (false !== ($file = readdir($handle))) {
@@ -355,19 +260,9 @@
             }
             closedir($handle);
 
-            //array_splice($files, 2);
-
             // sort
             krsort($files);
 
-            //$lines = file($myFile);//file in to an array
-            //echo $lines[1]; //line 2
-
-            //how many news to show in the page
-            echo "<h2 class='the_title'>Actualité</h2>";
-            $max_news = 10;
-
-            $i=0;
             foreach ($files as $val) {
                 
                 echo '<div class="part">';
@@ -379,13 +274,7 @@
                 //substr($lines[217], 10, 30)
                 echo "</div>";
                 echo "<hr>";
-
-                $i++;
-                if($i==$max_news){
-                    break;
-                }
             }
-            echo '<a class="more" href="news/"><br><br>More <i class="fas fa-caret-right"></i></a>';
         } 
         ?>
         </div>
@@ -406,11 +295,11 @@
                 <p>E-mail : <a href="mailto:mi@cuillizi.dz">mi@cuillizi.dz</a></p>
 
                 <div class="socials">
-                    <a href="#"><img src="media/socials/fb.png"></a>
-                    <a href="#"><img src="media/socials/twiter.png"></a>
-                    <a href="#"><img src="media/socials/google+.jpg"></a>
-                    <a href="#"><img src="media/socials/linkdin.png"></a>
-                    <a href="#"><img src="media/socials/yt.png"></a>
+                    <a href="#"><img src="../media/socials/fb.png"></a>
+                    <a href="#"><img src="../media/socials/twiter.png"></a>
+                    <a href="#"><img src="../media/socials/google+.jpg"></a>
+                    <a href="#"><img src="../media/socials/linkdin.png"></a>
+                    <a href="#"><img src="../media/socials/yt.png"></a>
                 </div>
             </div>
         </footer>
